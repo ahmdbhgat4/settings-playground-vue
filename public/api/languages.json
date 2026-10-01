@@ -1,0 +1,4 @@
+[
+    { "id": "en_ltr_0", "code": "en", "name": "English", "dir": "ltr" },
+    { "id": "ar_rtl_1", "code": "ar", "name": "العربية", "dir": "rtl" }
+]
