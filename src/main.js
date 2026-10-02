@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { createHead } from '@vueuse/head';
 import { createPinia } from 'pinia';
 import { createI18n } from 'vue-i18n';
 
@@ -21,5 +22,6 @@ pinia.use(piniaPluginPersistedstate);
 app.use(pinia);
 app.use(router);
 app.use(i18n);
+app.use(createHead());
 
 app.mount('#app');

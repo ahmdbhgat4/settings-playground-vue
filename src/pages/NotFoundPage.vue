@@ -1,7 +1,18 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
+import { useHead } from '@vueuse/head';
+import { computed } from 'vue';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+
+useHead({
+    title: computed(() => `404 | ${t('logo')}`),
+    meta: [
+        { name: 'description', content: computed(() => t('n_text')) },
+        { property: 'og:title', content: computed(() => t('n_title')) },
+        { property: 'og:locale', content: locale },
+    ],
+});
 </script>
 
 <template>

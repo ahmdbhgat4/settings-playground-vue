@@ -1,8 +1,20 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
+import { useHead } from '@vueuse/head';
 import SettingsBox from '@/components/SettingsBox.vue';
+import { computed } from 'vue';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
+
+useHead({
+    title: computed(() => `${t('nav_home')} | ${t('logo')}`),
+    meta: [
+        { name: 'description', content: computed(() => t('h_intro')) },
+        { property: 'og:title', content: computed(() => t('h_title')) },
+        { property: 'og:locale', content: locale },
+        { property: 'keywords', content: 'frontend, vue, reactivity' },
+    ],
+});
 </script>
 
 <template>
